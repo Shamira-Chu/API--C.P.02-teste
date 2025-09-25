@@ -1,3 +1,16 @@
+
+class DogImage {
+    constructor(jsonData) {
+        this.imageUrl = jsonData.message;
+    }
+}
+
+function renderDogImage(dogPic) {
+    const dogContainer = document.getElementById('dog-container');
+    dogContainer.innerHTML = ''; 
+
+    const imgElement = document.createElement('img');
+    imgElement.src = dogPic.imageUrl; 
 class CatFact {
     constructor(textoDoFato) {
         this.fact = textoDoFato;
@@ -45,7 +58,23 @@ function renderDogImage(dogPic) {
 
     dogContainer.appendChild(imgElement);
 }
+async function getDogImage() {
+    const apiUrl = 'https://dog.ceo/api/breeds/image/random';
 
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        const dogPic = new DogImage(data);
+
+        renderDogImage(dogPic);
+
+    } catch (error) {
+        console.error('Ocorreu um erro:', error);
+    }
+}
+
+getDogImage();
 
 function getDogImage() {
     const apiUrl = 'https://dog.ceo/api/breeds/image/random';
