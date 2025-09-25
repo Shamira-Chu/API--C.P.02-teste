@@ -2,6 +2,7 @@
 nome dos integrantes:
 - Denise
 - Tandara
+- Thiago
 
 ## Como desenvolver o desafio
 Montem as mesmas equipes que farão na CP2:
