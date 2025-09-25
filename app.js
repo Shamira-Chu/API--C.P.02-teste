@@ -8,7 +8,7 @@ class DogImage {
 
 function renderDogImage(dogPic) {
     const dogContainer = document.getElementById('dog-container');
-    dogContainer.innerHTML = ''; // Limpa o conteúdo anterior
+    dogContainer.innerHTML = '';
 
     const imgElement = document.createElement('img');
     imgElement.src = dogPic.imageUrl;
@@ -40,7 +40,7 @@ function getDogImage() {
 
 
 
-const newImageButton = document.getElementById('new-image-btn');
+const newImageButton = document.getElementById('image-btn');
 
 
 newImageButton.addEventListener('click', getDogImage);
